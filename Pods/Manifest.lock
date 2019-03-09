@@ -20,13 +20,14 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CTMediator
-    - FankMine
     - Kingfisher
     - SwiftyJSON
+  https://github.com/fankfank/FankSpecs.git:
+    - FankMine
 
 SPEC CHECKSUMS:
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
-  FankMine: f4715061d769f648652acc15717e6effa0c9b844
+  FankMine: 6c0a6667268c4497e96a4d7992b61e600deea64b
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
