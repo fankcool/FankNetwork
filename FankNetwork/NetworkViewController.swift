@@ -9,7 +9,6 @@
 import UIKit
 import CTMediator
 import FankMine
-import FankMine_Extension
 
 typealias Closure = (String) -> Void
 
@@ -21,6 +20,8 @@ class NetworkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "FankNetwork"
         
         print("NetworkViewController - \(String(describing: userId))")
         

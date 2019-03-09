@@ -16,9 +16,10 @@ let NetworkPOSTAction = "NetworkPostViewController"
 
 public extension CTMediator {
     
-    public func showNetworkViewController(callback: @escaping (String) -> Void) -> UIViewController? {
+    public func showNetworkViewController(userId: String, callback: @escaping (String) -> Void) -> UIViewController? {
         // kCTMediatorParamsKeySwiftTargetModuleName为模块名称，swift里必须写
-        let params = ["callback":callback,
+        let params = ["userId":userId,
+                      "callback":callback,
                       kCTMediatorParamsKeySwiftTargetModuleName:NetworkTarget] as [AnyHashable : Any]
         if let vc = self.performTarget(NetworkTarget, action: NetworkAction, params: params, shouldCacheTarget: false) as? UIViewController {
             return vc

@@ -15,7 +15,7 @@ public class MineViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.title = "FankMine"
     }
     
     public class func doSomething() {

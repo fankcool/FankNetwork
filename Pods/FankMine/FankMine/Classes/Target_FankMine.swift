@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import CTMediator
 
-class Target_FankMine: NSObject {
+let target = "FankMine"
+let action = "MineViewController"
+
+public extension CTMediator {
     
-    func Action_MineViewController(_ params:[AnyHashable:Any]) -> UIViewController {
+    public func showMineViewController(callback: @escaping (String) -> Void) -> UIViewController? {
+        let params = ["callback":callback,
+                      kCTMediatorParamsKeySwiftTargetModuleName:target] as [AnyHashable : Any]
+        if let vc = self.performTarget(target, action: action, params: params, shouldCacheTarget: false) as? UIViewController {
+            return vc
+        }
+        return nil
+    }
+}
+
+@objc class Target_FankMine: NSObject {
+    
+    @objc func Action_MineViewController(_ params:[AnyHashable:Any]) -> UIViewController {
         if let callback = params["callback"] as? (String) -> Void {
             callback("success")
         }
