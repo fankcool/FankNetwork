@@ -9,18 +9,18 @@
 import UIKit
 import CTMediator
 
-let networkTarget = "FankNetwork"
-let networkAction = "NetworkViewController"
+let NetworkTarget = "FankNetwork"
+let NetworkAction = "NetworkViewController"
 
-let networkPOSTAction = "NetworkPostViewController"
+let NetworkPOSTAction = "NetworkPostViewController"
 
 public extension CTMediator {
     
     public func showNetworkViewController(callback: @escaping (String) -> Void) -> UIViewController? {
         // kCTMediatorParamsKeySwiftTargetModuleName为模块名称，swift里必须写
         let params = ["callback":callback,
-                      kCTMediatorParamsKeySwiftTargetModuleName:"FankNetwork"] as [AnyHashable : Any]
-        if let vc = self.performTarget(networkTarget, action: networkAction, params: params, shouldCacheTarget: false) as? UIViewController {
+                      kCTMediatorParamsKeySwiftTargetModuleName:NetworkTarget] as [AnyHashable : Any]
+        if let vc = self.performTarget(NetworkTarget, action: NetworkAction, params: params, shouldCacheTarget: false) as? UIViewController {
             return vc
         }
         return nil
@@ -29,8 +29,8 @@ public extension CTMediator {
     public func showNetworkPostViewController(callback: @escaping (String) -> Void) -> UIViewController? {
         // kCTMediatorParamsKeySwiftTargetModuleName为模块名称，swift里必须写
         let params = ["callback":callback,
-                      kCTMediatorParamsKeySwiftTargetModuleName:"FankNetwork"] as [AnyHashable : Any]
-        if let vc = self.performTarget(networkTarget, action: networkPOSTAction, params: params, shouldCacheTarget: false) as? UIViewController {
+                      kCTMediatorParamsKeySwiftTargetModuleName:NetworkTarget] as [AnyHashable : Any]
+        if let vc = self.performTarget(NetworkTarget, action: NetworkPOSTAction, params: params, shouldCacheTarget: false) as? UIViewController {
             return vc
         }
         return nil
@@ -40,11 +40,19 @@ public extension CTMediator {
 @objc class Target_FankNetwork: NSObject {
     
     @objc func Action_NetworkViewController(_ params:[AnyHashable:Any]) -> UIViewController {
-        if let callback = params["callback"] as? (String) -> Void {
-            callback("success")
-        }
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NetworkViewController") as! NetworkViewController
+        let bundle = Bundle(for: NetworkViewController.classForCoder())
+        
+        let vc = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "NetworkViewController") as! NetworkViewController
+        
+        vc.userId = params["userId"] as? String
+        
+        // 通过两层闭包回传目标页面到上一页的值
+        vc.closure = { result in
+            if let callback = params["callback"] as? (String) -> Void {
+                callback(result)
+            }
+        }
         
         return vc
     }
@@ -54,7 +62,9 @@ public extension CTMediator {
             callback("success")
         }
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NetworkPostViewController") as! NetworkPostViewController
+        let bundle = Bundle(for: NetworkPostViewController.classForCoder())
+        
+        let vc = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "NetworkPostViewController") as! NetworkPostViewController
         
         return vc
     }

@@ -1,0 +1,6 @@
+framework module FankMine_Extension {
+  umbrella header "FankMine_Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}
