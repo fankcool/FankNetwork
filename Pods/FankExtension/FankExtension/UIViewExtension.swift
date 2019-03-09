@@ -1,46 +1,32 @@
 //
 //  UIViewExtension.swift
-//  FankMine
+//  FankExtension
 //
-//  Created by fank on 2019/3/6.
+//  Created by fank on 2019/3/10.
 //  Copyright © 2019年 fank. All rights reserved.
 //
 
 import UIKit
 
-enum ImageType : String {
-    case JPG = ".jpg"
-    case PNG = ".png"
-    
-    var value : String {
-        return self.rawValue
-    }
-}
-
-public class ImageResource {
-    
-    public class func loadImage(name:String) -> UIImage {
-        var path : String?
-        let currentBundle = Bundle(for: self)
-        if name.contains(".") {
-            path = currentBundle.path(forResource: name, ofType: nil)
-        } else {
-            if let jpgPath = currentBundle.path(forResource: name + ImageType.JPG.value, ofType: nil) {
-                path = jpgPath
-            } else if let pngPath = currentBundle.path(forResource: name + ImageType.PNG.value, ofType: nil) {
-                path = pngPath
-            }
-        }
-        return UIImage(contentsOfFile: path!)!
-    }
-}
-
 public protocol StoryboardLoadable { }
 
 public extension StoryboardLoadable {
-    static func loadFromStoryboard() -> Self {
+    
+    static func loadFromStoryboard(name: String = "\(Self.self)") -> Self? {
+        
+        var sef : Self?
+        
         let currentBundle = Bundle(for: self as! AnyClass)
-        return UIStoryboard(name: "\(self)", bundle: currentBundle).instantiateInitialViewController() as! Self
+        
+        let storyboard = UIStoryboard(name: name, bundle: currentBundle)
+        
+        if let vc = storyboard.instantiateInitialViewController() {
+            sef = vc as? Self
+        } else {
+            sef = storyboard.instantiateViewController(withIdentifier: "\(String(describing: self))") as? Self
+        }
+        
+        return sef
     }
 }
 

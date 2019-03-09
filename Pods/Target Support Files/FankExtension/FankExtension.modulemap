@@ -1,0 +1,6 @@
+framework module FankExtension {
+  umbrella header "FankExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

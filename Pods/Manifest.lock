@@ -1,36 +1,42 @@
 PODS:
   - CTMediator (25)
-  - FankMine (0.0.16):
+  - FankExtension (0.0.2)
+  - FankMine (0.0.18):
     - CTMediator
-    - FankMine/Extension (= 0.0.16)
-    - FankMine/Mine (= 0.0.16)
-  - FankMine/Extension (0.0.16):
+    - FankExtension
+    - FankMine/Extension (= 0.0.18)
+    - FankMine/Mine (= 0.0.18)
+  - FankMine/Extension (0.0.18):
     - CTMediator
+    - FankExtension
     - Kingfisher (~> 4.8.1)
-  - FankMine/Mine (0.0.16):
+  - FankMine/Mine (0.0.18):
     - CTMediator
+    - FankExtension
     - SwiftyJSON
   - Kingfisher (4.8.1)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - CTMediator
-  - FankMine (= 0.0.16)
+  - FankExtension (= 0.0.2)
+  - FankMine (= 0.0.18)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CTMediator
+    - FankExtension
+    - FankMine
     - Kingfisher
     - SwiftyJSON
-  https://github.com/fankfank/FankSpecs.git:
-    - FankMine
 
 SPEC CHECKSUMS:
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
-  FankMine: 6c0a6667268c4497e96a4d7992b61e600deea64b
+  FankExtension: a5662ae1b39199c0afeef4eedd8a25910b139a5d
+  FankMine: d1c745f7b615c9b299fb0d3e46e317ca47299aed
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 0507e4dd2a973ea9a695295fc81bdc27dfd6c1d1
+PODFILE CHECKSUM: 2aadcf9db608e9e44bf01724de61a5e11215f82b
 
 COCOAPODS: 1.5.3

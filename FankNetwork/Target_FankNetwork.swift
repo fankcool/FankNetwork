@@ -42,31 +42,31 @@ public extension CTMediator {
     
     @objc func Action_NetworkViewController(_ params:[AnyHashable:Any]) -> UIViewController {
         
-        let bundle = Bundle(for: NetworkViewController.classForCoder())
-        
-        let vc = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "NetworkViewController") as! NetworkViewController
-        
-        vc.userId = params["userId"] as? String
-        
-        // 通过两层闭包回传目标页面到上一页的值
-        vc.closure = { result in
-            if let callback = params["callback"] as? (String) -> Void {
-                callback(result)
+        if let vc = NetworkViewController.loadFromStoryboard(name: "Main") {
+            
+            vc.userId = params["userId"] as? String
+            
+            // 通过两层闭包回传目标页面到上一页的值
+            vc.closure = { result in
+                if let callback = params["callback"] as? (String) -> Void {
+                    callback(result)
+                }
             }
         }
         
-        return vc
+        return UIViewController()
     }
     
     @objc func Action_NetworkPostViewController(_ params:[AnyHashable:Any]) -> UIViewController {
+        
         if let callback = params["callback"] as? (String) -> Void {
             callback("success")
         }
         
-        let bundle = Bundle(for: NetworkPostViewController.classForCoder())
+        if let vc = NetworkPostViewController.loadFromStoryboard(name: "Main") {
+            return vc
+        }
         
-        let vc = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "NetworkPostViewController") as! NetworkPostViewController
-        
-        return vc
+        return UIViewController()
     }
 }

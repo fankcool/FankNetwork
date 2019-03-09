@@ -31,6 +31,6 @@ public extension CTMediator {
             callback("success")
         }
         
-        return MineViewController.loadFromStoryboard()
+        return MineViewController.loadFromStoryboard()!
     }
 }

@@ -25,7 +25,7 @@ class NetworkViewController: UIViewController {
         
         print("NetworkViewController - \(String(describing: userId))")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(pushToOtherVc))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: #selector(pushToOtherVc))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
