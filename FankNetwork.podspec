@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FankNetwork"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "FankNetwork private cocoapods project - summary."
 
   # This description is used to generate tags and improve search results.
