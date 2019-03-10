@@ -52,6 +52,8 @@ public extension CTMediator {
                     callback(result)
                 }
             }
+            
+            return vc
         }
         
         return UIViewController()
