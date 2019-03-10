@@ -1,6 +1,6 @@
 PODS:
   - CTMediator (25)
-  - FankExtension (0.0.2)
+  - FankExtension (0.0.3)
   - FankMine (0.0.18):
     - CTMediator
     - FankExtension
@@ -19,7 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - CTMediator
-  - FankExtension (= 0.0.2)
+  - FankExtension
   - FankMine (= 0.0.18)
 
 SPEC REPOS:
@@ -32,11 +32,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
-  FankExtension: a5662ae1b39199c0afeef4eedd8a25910b139a5d
+  FankExtension: 4f591484ace1ab4542b78228dce7db3c3f5319eb
   FankMine: d1c745f7b615c9b299fb0d3e46e317ca47299aed
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 2aadcf9db608e9e44bf01724de61a5e11215f82b
+PODFILE CHECKSUM: fa4a13bb803cb3cfea15f8f6a786cd5ab2f57dbe
 
 COCOAPODS: 1.5.3

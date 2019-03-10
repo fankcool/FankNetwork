@@ -12,6 +12,7 @@ public protocol StoryboardLoadable { }
 
 public extension StoryboardLoadable {
     
+    // 此处感觉返回个可选值不方便，但是不反悔可选值又有可能因为没找到控制器而崩溃，如何权衡？？
     static func loadFromStoryboard(name: String = "\(Self.self)") -> Self? {
         
         var sef : Self?
@@ -20,7 +21,8 @@ public extension StoryboardLoadable {
         
         let storyboard = UIStoryboard(name: name, bundle: currentBundle)
         
-        if let vc = storyboard.instantiateInitialViewController() {
+        // 必须加后面的isKindOf判断，不然可能把sb里的初始化控制器当成了目标控制器返回
+        if let vc = storyboard.instantiateInitialViewController(), vc.isKind(of: self as! AnyClass) {
             sef = vc as? Self
         } else {
             sef = storyboard.instantiateViewController(withIdentifier: "\(String(describing: self))") as? Self
