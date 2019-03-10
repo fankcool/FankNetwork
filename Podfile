@@ -10,8 +10,8 @@ target 'FankNetwork' do
 
   # Pods for FankNetwork
   pod 'CTMediator'
-  pod 'FankMine', '0.0.18'
+  pod 'FankMine'
   
-  pod 'FankExtension', '0.0.3'
+  pod 'FankExtension'
 
 end
