@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FankNetwork"
-  s.version      = "0.0.13"
+  s.version      = "0.0.14"
   s.summary      = "FankNetwork private cocoapods project - summary."
 
   # This description is used to generate tags and improve search results.
@@ -138,5 +138,6 @@ Pod::Spec.new do |s|
   s.dependency 'CTMediator'
   s.dependency 'FankMine'
   s.dependency 'FankExtension'
+  s.dependency 'Alamofire'
 
 end
