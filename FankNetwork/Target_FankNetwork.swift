@@ -56,7 +56,7 @@ public extension CTMediator {
             return vc
         }
         
-        return UIViewController()
+        return UIViewController() // 此处感觉可以返回一个通用的错误提示控制器，如果有错误能让接受返回的地方更加明了
     }
     
     @objc func Action_NetworkPostViewController(_ params:[AnyHashable:Any]) -> UIViewController {

@@ -11,6 +11,8 @@
 		34391C71222F6FB6003AB17C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34391C70222F6FB6003AB17C /* ViewController.swift */; };
 		34391C76222F6FB7003AB17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34391C75222F6FB7003AB17C /* Assets.xcassets */; };
 		34391C79222F6FB7003AB17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34391C77222F6FB7003AB17C /* LaunchScreen.storyboard */; };
+		34995C9E226CAEF3007B610B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34995C9C226CAEF2007B610B /* APIError.swift */; };
+		34995C9F226CAEF3007B610B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34995C9D226CAEF2007B610B /* APIRequest.swift */; };
 		349F816F22344F7B00FCD8CF /* NetworkPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349F816E22344F7B00FCD8CF /* NetworkPostViewController.swift */; };
 		349F817222344FA200FCD8CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349F817122344FA200FCD8CF /* Main.storyboard */; };
 		349F81742234500300FCD8CF /* Target_FankNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349F81732234500300FCD8CF /* Target_FankNetwork.swift */; };
@@ -25,6 +27,8 @@
 		34391C75222F6FB7003AB17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34391C78222F6FB7003AB17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34391C7A222F6FB7003AB17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34995C9C226CAEF2007B610B /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		34995C9D226CAEF2007B610B /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		349F816E22344F7B00FCD8CF /* NetworkPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPostViewController.swift; sourceTree = "<group>"; };
 		349F817122344FA200FCD8CF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		349F81732234500300FCD8CF /* Target_FankNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target_FankNetwork.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				34391C7A222F6FB7003AB17C /* Info.plist */,
 				34AB904A22344AAC00B5B368 /* NetworkViewController.swift */,
 				349F816E22344F7B00FCD8CF /* NetworkPostViewController.swift */,
+				34995C9C226CAEF2007B610B /* APIError.swift */,
+				34995C9D226CAEF2007B610B /* APIRequest.swift */,
 				349F81732234500300FCD8CF /* Target_FankNetwork.swift */,
 			);
 			path = FankNetwork;
@@ -198,7 +204,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FankNetwork/Pods-FankNetwork-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FankNetwork/Pods-FankNetwork-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/FankExtension/FankExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/FankMine/FankMine.framework",
@@ -215,7 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FankNetwork/Pods-FankNetwork-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FankNetwork/Pods-FankNetwork-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -226,10 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				34391C71222F6FB6003AB17C /* ViewController.swift in Sources */,
+				34995C9F226CAEF3007B610B /* APIRequest.swift in Sources */,
 				349F816F22344F7B00FCD8CF /* NetworkPostViewController.swift in Sources */,
 				34AB904B22344AAC00B5B368 /* NetworkViewController.swift in Sources */,
 				349F81742234500300FCD8CF /* Target_FankNetwork.swift in Sources */,
 				34391C6F222F6FB6003AB17C /* AppDelegate.swift in Sources */,
+				34995C9E226CAEF3007B610B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

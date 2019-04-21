@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FankNetwork"
-  s.version      = "0.0.12"
+  s.version      = "0.0.13"
   s.summary      = "FankNetwork private cocoapods project - summary."
 
   # This description is used to generate tags and improve search results.
@@ -136,7 +136,7 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
   s.dependency 'CTMediator'
-  s.dependency 'FankMine', '0.0.18'
+  s.dependency 'FankMine'
   s.dependency 'FankExtension'
 
 end
