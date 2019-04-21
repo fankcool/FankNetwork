@@ -13,5 +13,7 @@ target 'FankNetwork' do
   pod 'FankMine'
   
   pod 'FankExtension'
+  
+  pod 'Alamofire'
 
 end

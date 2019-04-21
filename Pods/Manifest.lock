@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.2)
   - CTMediator (25)
   - FankExtension (0.0.5)
   - FankMine (0.0.19):
@@ -18,12 +19,14 @@ PODS:
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire
   - CTMediator
   - FankExtension
   - FankMine
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - CTMediator
     - FankExtension
     - FankMine
@@ -31,12 +34,13 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   FankExtension: 9ad68d371c54e08d6d805eb8cc8a8a81783cc135
   FankMine: 210b23418ace19a4005d1f7b6518d9cb4c6330f0
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 15bdeff1730989feed84a4600925447d91083b27
+PODFILE CHECKSUM: 3c54320f4a79d8b8a2ea5533621f7f15e25c7578
 
 COCOAPODS: 1.6.1
