@@ -9,6 +9,15 @@
 import UIKit
 import Alamofire
 
+public protocol APIRequestDelegate : NSObjectProtocol {
+    func apiRequestCompletion(result: APIResult<JSONDocument>)
+}
+
+public typealias CompletionHandler = (_ result: APIResult<JSONDocument>) -> Swift.Void
+
+public typealias SuccessHandler = (_ jsonDocument: JSONDocument) -> Swift.Void
+public typealias FailedHandler = (_ error: APIError) -> Swift.Void
+
 extension Optional {
     
     /**
@@ -22,15 +31,6 @@ extension Optional {
         }
     }
 }
-
-public protocol APIRequestDelegate : NSObjectProtocol {
-    func apiRequestCompletion(result: APIResult<JSONDocument>)
-}
-
-public typealias CompletionHandler = (_ result: APIResult<JSONDocument>) -> Swift.Void
-
-public typealias SuccessHandler = (_ jsonDocument: JSONDocument) -> Swift.Void
-public typealias FailedHandler = (_ error: APIError) -> Swift.Void
 
 public class APIRequest {
     
@@ -273,42 +273,42 @@ public class APIRequest {
 /// Represents JSON API response data in a defined format.
 public class JSONDocument {
     /// The JSON data provided to init.
-    let json: [String: Any]
+    public let json: [String: Any]
     /**
      Creates a new JSONAPIResource struct from the provided JSON data.
      
      - parameter json: The JSON data to base the struct off of.
      */
-    init(json: [String: Any]) {
+    public init(json: [String: Any]) {
         self.json = json
     }
-    convenience init(data: [String: Any]) {
+    public convenience init(data: [String: Any]) {
         self.init(json: [
             "data": data,
             ])
     }
     /// json.data
-    var data: [String: Any]? {
+    public var data: [String: Any]? {
         return json["data"] as? [String: Any]
     }
     /// json.meta
-    var meta: [String: Any]? {
+    public var meta: [String: Any]? {
         return json["meta"] as? [String: Any]
     }
     /// json.data is NSNull
-    var isResourceUndefined: Bool {
+    public var isResourceUndefined: Bool {
         return json["data"] == nil
     }
     
     /// there is a error code
-    var error_code: Int? {
+    public var error_code: Int? {
         guard let error_code = json["error_code"] as? Int else {
             return nil // Top level errors object doesn't exist or is in the incorrect format.
         }
         return error_code
     }
     
-    var errors: [JSONAPIError]? {
+    public var errors: [JSONAPIError]? {
         guard let errors = json["errors"] as? [[String: Any]] else {
             return nil // Top level errors object doesn't exist or is in the incorrect format.
         }

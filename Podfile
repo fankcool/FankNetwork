@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 use_frameworks!
 
-#source 'https://github.com/fankfank/FankSpecs.git'
+source 'https://github.com/fankfank/FankSpecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'FankNetwork' do
